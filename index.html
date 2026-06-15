@@ -1,60 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Live Avatar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gespräch mit Marco</title>
 
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background-image: url("background.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-    .avatar-frame {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -43%);
-      width: min(56vw, 980px);
-      height: min(56vh, 620px);
-      border-radius: 18px;
-      overflow: hidden;
-      background: white;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-    }
+        body {
+            background-image: url('./background.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            background-color: #0f1118;
+        }
 
-    .avatar-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+        /*
+        =====================================
+        HEYGEN PORTRAIT WINDOW
+        =====================================
+        */
 
-    @media (max-width: 900px) {
-      .avatar-frame {
-        width: 88vw;
-        height: 52vh;
-        transform: translate(-50%, -35%);
-      }
-    }
-  </style>
+        .avatar-window {
+            position: absolute;
+
+            /* zentriert auf dem Mockup */
+            left: 50%;
+            top: 49.5%;
+
+            transform: translate(-50%, -50%);
+
+            /*
+            Diese Werte passen ungefähr
+            auf das letzte Mockup.
+            */
+
+            width: 18.4vw;
+            height: 59vh;
+
+            border-radius: 28px;
+            overflow: hidden;
+
+            background: #ffffff;
+
+            z-index: 100;
+        }
+
+        .avatar-window iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /*
+        Mobile Fallback
+        */
+
+        @media (max-width: 1200px) {
+
+            .avatar-window {
+                width: 24vw;
+                height: 62vh;
+            }
+
+        }
+
+        @media (max-width: 900px) {
+
+            .avatar-window {
+                width: 38vw;
+                height: 68vh;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .avatar-window {
+                width: 52vw;
+                height: 72vh;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
-  <div class="avatar-frame">
-    <!-- HIER DEINEN HEYGEN / PAGEGEN / LIVE AVATAR EMBED CODE EINFÜGEN -->
-<iframe src="https://embed.liveavatar.com/v1/74e224a2-84a0-4015-acd0-b38fd67c3c53?orientation=vertical" allow="microphone" title="LiveAvatar Embed" style="aspect-ratio: 9/16;"></iframe>
-    <!-- ENDE EMBED CODE -->
-  </div>
+
+    <div class="avatar-window">
+
+        <!--
+        HEYGEN EMBED HIER EINFÜGEN
+        -->
+
+      <iframe src="https://embed.liveavatar.com/v1/e336c2cb-65ef-44c9-b91d-9591d18f4631?orientation=vertical" allow="microphone" title="LiveAvatar Embed" style="aspect-ratio: 9/16;"></iframe>
+
+        <!--
+        Falls HeyGen keinen iframe liefert,
+        sondern Script + Div,
+        einfach diesen gesamten Block ersetzen.
+        -->
+
+    </div>
+
 </body>
+
 </html>
