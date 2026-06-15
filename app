@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Avatar</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      background-image: url("background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .avatar-frame {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -43%);
+      width: min(56vw, 980px);
+      height: min(56vh, 620px);
+      border-radius: 18px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .avatar-frame {
+        width: 88vw;
+        height: 52vh;
+        transform: translate(-50%, -35%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="avatar-frame">
+    <!-- HIER DEINEN HEYGEN / PAGEGEN / LIVE AVATAR EMBED CODE EINFÜGEN -->
+   <iframe src="https://embed.liveavatar.com/v1/6543634d-967c-4018-8406-c5629e769bea?orientation=horizontal" allow="microphone" title="LiveAvatar Embed" style="aspect-ratio: 16/9;"></iframe>
+    <!-- ENDE EMBED CODE -->
+  </div>
+</body>
+</html>
